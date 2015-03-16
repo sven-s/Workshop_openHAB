@@ -31,7 +31,7 @@ Sven Sönnichsen
 > Pie => Himbeerkuchen <br/>
 > Pi => Python Interpreter
 
-<img style="border: none; width: 50%" src="./images/raspi.png" alt="Raspi" /> 
+<img style="border: none; width: 50%" src="./images/Raspi.png" alt="Raspi" /> 
 
 ---
 
@@ -105,25 +105,25 @@ Sven Sönnichsen
 
 Es klinget!
 
-![Klingel](./images/img_0439.jpg)
+![Klingel](./images/IMG_0439.jpg)
 
 ---
 
 Leider nur an der Ritto Türstation direkt neben der Tür!
 
-![Türstation](./images/img_0440.jpg)
+![Türstation](./images/IMG_0440.jpg)
 
 ---
 
 Kinder lassen die Tür offen stehen
 
-![Kinder](./images/img_0445.jpg)
+![Kinder](./images/IMG_0445.jpg)
 
 ---
 
 Rollladensteuerung, die autark ist
 
-<img style="border: none" src="images/img_0468.jpg" alt="Kinder" /> 
+<img style="border: none" src="images/IMG_0468.jpg" alt="Kinder" /> 
 
 ---
 
@@ -144,25 +144,25 @@ Rollladensteuerung, die autark ist
 
 Klingel mit Push Notification
 
-![Küche](./images/img_0458.jpg)
+![Küche](./images/IMG_0458.jpg)
 
 ---
 
 Es bimmelt nun auch in der Küche!
 
-![Küche](./images/img_0441.jpg)
+![Küche](./images/IMG_0441.jpg)
  
 ---
 
 Türstation mit Z-Wave Sensor
 
-![Ritto](./images/img_0437.jpg)
+![Ritto](./images/IMG_0437.jpg)
 
 ---
 
 Türsensor mit Z-Wave Sensor
 
-![Türkontaktsensor](./images/img_0446.jpg)
+![Türkontaktsensor](./images/IMG_0446.jpg)
 
 ---
 

@@ -486,13 +486,13 @@ Z-Wave,
 
 ## Installation
 
-# Runtime in ein Verzeichnis entpacken
-# Die benötigten Addons ins Addons Verzeichnis kopieren
-# openhab.cfg erstellen mit den notwendigen Einträgeen aus openhab_default.cfg
-# Optional: Demo Package kopieren
-# starten
-# http://localhost:8080/openhab.app?sitemap=demo
-# openHAB Designer 
+- Runtime in ein Verzeichnis entpacken
+- Die benötigten Addons ins Addons Verzeichnis kopieren
+- openhab.cfg erstellen mit den notwendigen Einträgeen aus openhab_default.cfg
+- Optional: Demo Package kopieren
+- starten
+- http://localhost:8080/openhab.app?sitemap=demo
+- openHAB Designer 
 
 ---
 

@@ -679,6 +679,17 @@ https://github.com/jpmens/simple-mqtt-websocket-example
 - iOS, Android
 - Backend
 
+---
+
+## Tools
+
+- iOS
+  - Simple Pi (CPU, Mem, Temp, Commands)
+  - logsview (tail)
+  - MQTT Inspector 
+- Chrome
+  - MQTTLens
+
 ***
 
 # Projektideen

@@ -1,7 +1,10 @@
 #!/bin/bash
 
+apt-get update
+apt-get -y upgrade
+
 # Regenerate SSH Host Keys, restart SSHd
-rm /etc/ssh/ssh_host_* && dpkg-reconfigure openssh-server
+#rm /etc/ssh/ssh_host_* && dpkg-reconfigure openssh-server
 
 # Install & configure NTP
 apt-get -y install ntp fake-hwclock vim
@@ -11,6 +14,6 @@ dpkg-reconfigure -f noninteractive tzdata
 #
 # Change hostname to openhab
 #
-hostname openhab
-echo openhab > /etc/hostname
-echo "127.0.0.1 openhab" >> /etc/hosts
+hostname openhab2
+echo openhab2 > /etc/hostname
+echo "127.0.0.1 openhab2" >> /etc/hosts

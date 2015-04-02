@@ -29,7 +29,7 @@ RUN_AS=openhab
 # get path to equinox jar inside $eclipsehome folder
 cp=$(find $ECLIPSEHOME/server -name "org.eclipse.equinox.launcher_*.jar" | sort | tail -1);
 
-DAEMON_ARGS="-Dosgi.clean=true -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Djetty.port=$HTTPPORT -Djetty.port.ssl=$HTTPSPORT -Djetty.home=$ECLIPSEHOME -Dlogback.configurationFile=$ECLIPSEHOME/configurations/logback.xml -Dfelix.fileinstall.dir=$ECLIPSEHOME/addons -Djava.library.path=$ECLIPSEHOME/lib -Djava.security.auth.login.config=$ECLIPSEHOME/etc/login.conf -Dorg.quartz.properties=$ECLIPSEHOME/etc/quartz.properties -Djava.awt.headless=true -jar $cp -console ${TELNETPORT} -server -XX:MarPermSize=384m -Xmx384m -XX:ReserveCodeCacheSize=96m"
+DAEMON_ARGS="-Dosgi.clean=true -Declipse.ignoreApp=true -Dgnu.io.rxtx.SerialPorts=/dev/ttyAMA0:/dev/ttyUSB0 -Dosgi.noShutdown=true -Djetty.port=$HTTPPORT -Djetty.port.ssl=$HTTPSPORT -Djetty.home=$ECLIPSEHOME -Dlogback.configurationFile=$ECLIPSEHOME/configurations/logback.xml -Dfelix.fileinstall.dir=$ECLIPSEHOME/addons -Djava.library.path=$ECLIPSEHOME/lib -Djava.security.auth.login.config=$ECLIPSEHOME/etc/login.conf -Dorg.quartz.properties=$ECLIPSEHOME/etc/quartz.properties -Djava.awt.headless=true -jar $cp -console ${TELNETPORT} -server -XX:MarPermSize=384m -Xmx384m -XX:ReserveCodeCacheSize=96m"
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

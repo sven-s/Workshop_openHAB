@@ -74,11 +74,34 @@ cp *.zwave-* ../runtime/addons
 cp *.squeezeserver-* ../runtime/addons
 cp *.logging-* ../runtime/addons
 cp *.rrd4j-* ../runtime/addons
+cd ..
 
+#
+# install razberry
+#
+wget -q -O - razberry.z-wave.me/install | bash
+service z-way-server stop && update-rc.d z-way-server disable
 
+apt-get install -y mosh
 
+#
+# install mosquitto
+#
+apt-get install -y mosquitto mosquitto-clients python-mosquitto
+/etc/init.d/mosquitto stop
 
-
+#
+# get tools to setup mosquitto
+#
+mkdir owntracks
+cd owntracks
+git clone https://github.com/owntracks/tools.git
+./tools/mosquitto-setup.sh
+rm mosquitto.conf
+cp $ADDONS/mosquitto.conf /etc/mosquitto/mosquitto.conf
+mosquitto_passwd -c /etc/mosquitto/mosquitto.passwd sven
+mosquitto_passwd /etc/mosquitto/mosquitto.passwd eija
+mosquitto_passwd /etc/mosquitto/mosquitto.passwd openhab
 
 
 

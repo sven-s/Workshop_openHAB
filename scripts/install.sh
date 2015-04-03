@@ -9,8 +9,6 @@ id openhab 2>/dev/null >/dev/null || useradd -c openHAB -d /home/openhab -m -U o
 echo "openhab:openhab" | chpasswd
 adduser openhab sudo
 
-cp $ADDONS/environment /etc/environment
-
 #
 # Download openhab, setup
 #
@@ -76,19 +74,33 @@ cp *.logging-* ../runtime/addons
 cp *.rrd4j-* ../runtime/addons
 cd ..
 
+rm distribution-1.6.2-addons.zip
+
 #
 # install razberry
 #
 wget -q -O - razberry.z-wave.me/install | bash
 service z-way-server stop && update-rc.d z-way-server disable
 
+#
+# install mosh 
+#
 apt-get install -y mosh
 
 #
-# install mosquitto
+# install mosquitto - thanks to http://jpmens.net/2013/09/01/installing-mosquitto-on-a-raspberry-pi/
 #
+curl -O http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+sudo apt-key add mosquitto-repo.gpg.key
+rm mosquitto-repo.gpg.key
+cd /etc/apt/sources.list.d/
+sudo curl -O http://repo.mosquitto.org/debian/mosquitto-repo.list
+sudo apt-get update
+
 apt-get install -y mosquitto mosquitto-clients python-mosquitto
 /etc/init.d/mosquitto stop
+
+mkdir /var/log/mosquitto
 
 #
 # get tools to setup mosquitto
@@ -99,9 +111,13 @@ git clone https://github.com/owntracks/tools.git
 ./tools/mosquitto-setup.sh
 rm mosquitto.conf
 cp $ADDONS/mosquitto.conf /etc/mosquitto/mosquitto.conf
+
 mosquitto_passwd -c /etc/mosquitto/mosquitto.passwd sven
 mosquitto_passwd /etc/mosquitto/mosquitto.passwd eija
 mosquitto_passwd /etc/mosquitto/mosquitto.passwd openhab
+
+# copy to ca.crt to the samba share, so i can send it via mail to my iphone
+cp /etc/mosquitto/conf.d/ca.crt /home/openhab/configurations/mosquitto_ca.crt
 
 
 
